@@ -61,7 +61,7 @@ public class CapacitorUpdater {
     private static final String AB = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
     private static final SecureRandom rnd = new SecureRandom();
 
-    private final String pluginVersion = "3.2.0";
+    private final String pluginVersion = "3.2.1";
 
     private final Context context;
     private final CapacitorUpdaterEvents events;
