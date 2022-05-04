@@ -70,12 +70,12 @@ public class CapacitorUpdater {
     private final SharedPreferences prefs;
     private final SharedPreferences.Editor editor;
 
-    private String statsUrl = "";
-    private String appId = "";
-    private String deviceID = "";
+    public String appId = "";
+    public String deviceID = "";
     private String versionBuild = "";
     private String versionCode = "";
     private String versionOs = "";
+    public String statsUrl = "";
 
     private final FilenameFilter filter = new FilenameFilter() {
         @Override
