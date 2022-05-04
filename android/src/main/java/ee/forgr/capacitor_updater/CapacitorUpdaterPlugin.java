@@ -57,12 +57,12 @@ public class CapacitorUpdaterPlugin extends Plugin implements Application.Activi
         this.editor = this.prefs.edit();
 
         try {
-            this.implementation = new CapacitorUpdater(this.getContext(), new CapacitorUpdaterEvents() {
+            this.implementation = new CapacitorUpdater(this.getContext()) {
                 @Override
                 public void notifyDownload(final int percent) {
-                    CapacitorUpdaterPlugin.this.notifyDownload(percent);
+                    this.notifyDownload(percent);
                 }
-            });
+            };
             final PackageInfo pInfo = this.getContext().getPackageManager().getPackageInfo(this.getContext().getPackageName(), 0);
             this.currentVersionNative = new Version(pInfo.versionName);
         } catch (final PackageManager.NameNotFoundException e) {
@@ -180,7 +180,7 @@ public class CapacitorUpdaterPlugin extends Plugin implements Application.Activi
         this.checkAppReady();
         return true;
     }
-    
+
     @PluginMethod
     public void reload(final PluginCall call) {
         try {

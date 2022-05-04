@@ -85,13 +85,8 @@ public class CapacitorUpdater {
         }
     };
 
-    public CapacitorUpdater(final Context context) throws PackageManager.NameNotFoundException {
-        this(context, new CapacitorUpdaterEvents() {});
-    }
-
-    public CapacitorUpdater (final Context context, final CapacitorUpdaterEvents events) throws PackageManager.NameNotFoundException {
+    public CapacitorUpdater (final Context context) throws PackageManager.NameNotFoundException {
         this.context = context;
-        this.events = events;
 
         this.prefs = this.context.getSharedPreferences("CapWebViewSettings", Activity.MODE_PRIVATE);
         this.editor = this.prefs.edit();
@@ -155,7 +150,7 @@ public class CapacitorUpdater {
                 final int newPercent = (int)((lengthRead * 100) / lengthTotal);
                 if (lengthTotal > 1 && newPercent != percent) {
                     percent = newPercent;
-                    this.events.notifyDownload(this.calcTotalPercent(percent, 75, 90));
+                    this.notifyDownload(this.calcTotalPercent(percent, 75, 90));
                 }
 
                 lengthRead += entry.getCompressedSize();
