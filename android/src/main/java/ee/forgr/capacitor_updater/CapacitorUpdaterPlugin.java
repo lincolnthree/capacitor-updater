@@ -29,6 +29,8 @@ import java.util.ArrayList;
 
 @CapacitorPlugin(name = "CapacitorUpdater")
 public class CapacitorUpdaterPlugin extends Plugin implements Application.ActivityLifecycleCallbacks {
+    private static final String autoUpdateUrlDefault = "https://capgo.app/api/auto_update";
+    private static final String statsUrlDefault = "https://capgo.app/api/stats";
     private final String TAG = "Capacitor-updater";
 
     private static final String autoUpdateUrlDefault = "https://capgo.app/api/auto_update";
